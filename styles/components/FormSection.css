@@ -1,0 +1,80 @@
+:root {
+  --button-gradient: linear-gradient(to right, #000f6e, #0070dd, #56e0ea);
+}
+
+.form__section {
+  margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 2.75rem 3.375rem;
+  background-color: var(--bg-white);
+  box-shadow: var(--default-shadow);
+  border-radius: 20px;
+}
+
+.form__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 500;
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+  }
+}
+
+.form__offer__inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 300;
+
+  input {
+    font: inherit;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background-color: var(--bg-lightGray);
+    border: none;
+    border-radius: 12px;
+  }
+  input::placeholder {
+    color: var(--text-lightGray);
+  }
+}
+.form__offer__checkbox-wrapper {
+  margin-block: 22px 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+
+  label {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 300;
+    cursor: pointer;
+  }
+}
+.form__offer__button {
+  width: 100%;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: var(--text-white);
+  background: var(--button-gradient);
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}

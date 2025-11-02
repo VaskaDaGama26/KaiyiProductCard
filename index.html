@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kaiyi X3 Pro – Внедорожник</title>
+
+    <!--Styles -->
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/components.css" />
+
+    <!-- Geologica Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <img src="/images/logo.svg" alt="Logo" />
+      <nav class="nav">
+        <a class="nav__link" href="#">Главная</a>
+        <a class="nav__link" href="#">Автокредит</a>
+        <a class="nav__link" href="#">Trade-in</a>
+        <a class="nav__link" href="#">Акции</a>
+        <a class="nav__link" href="#">Лизинг</a>
+        <a class="nav__link" href="#">Выкуп</a>
+        <a class="nav__link" href="#">Авто под такси</a>
+        <a class="nav__link" href="#">Директ</a>
+        <a class="nav__link" href="#">Контакты</a>
+      </nav>
+      <a href="#" class="feedback__button">Обратная связь</a>
+    </header>
+    <main class="main">
+      <section class="section hero__section">
+        <div class="hero__info-wrapper">
+          <div class="hero__info-main">
+            <div class="hero__info">
+              <h1 class="hero__title">Kaiyi X3 Pro</h1>
+              <p class="hero__type">Внедорожник</p>
+            </div>
+            <span class="hero__price">от 1 149 000 руб</span>
+          </div>
+          <div class="hero__purchase">
+            <div class="purchase__options">
+              <label class="purchase__item">
+                <div class="purchase__header">
+                  <input
+                    class="custom__checkbox"
+                    type="radio"
+                    name="purchase__radio"
+                    id="tradein"
+                  />
+                  <span class="purchase__price">80 000 ₽</span>
+                </div>
+                <div class="purchase__content">
+                  <h3>Trade-in</h3>
+                  <p>
+                    Обнови машину без лишних хлопот — твой старый авто идёт в
+                    счёт оплаты нового.
+                  </p>
+                </div>
+              </label>
+              <label class="purchase__item">
+                <div class="purchase__header">
+                  <input
+                    class="custom__checkbox"
+                    type="radio"
+                    name="purchase__radio"
+                    id="default"
+                    checked
+                  />
+                  <span class="purchase__price">80 000 ₽</span>
+                </div>
+                <div class="purchase__content">
+                  <h3>Kaiyi Finance</h3>
+                  <p>
+                    Доступное автокредитование с выгодными ценами и
+                    дополнительными скидками на весь модельный ряд.
+                  </p>
+                </div>
+              </label>
+              <label class="purchase__item">
+                <div class="purchase__header">
+                  <input
+                    class="custom__checkbox"
+                    type="radio"
+                    name="purchase__radio"
+                    id="discount"
+                  />
+                  <span class="purchase__price">80 000 ₽</span>
+                </div>
+                <div class="purchase__content">
+                  <h3>Прямая скидка</h3>
+                  <p>Выгода от нашего автосалона.</p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <img src="/images/gallery/car.png" alt="" />
+          <div class="hero__visual__colors">
+            <a href="#blue"><div class="hero__visual__color blue"></div></a>
+            <a href="#red"><div class="hero__visual__color red"></div></a>
+            <a href="#green"><div class="hero__visual__color green"></div></a>
+            <a href="#gold"><div class="hero__visual__color gold"></div></a>
+            <a href="#black"><div class="hero__visual__color black"></div></a>
+          </div>
+          <div class="hero__visual__gallery">
+            <img src="/images/gallery/car1.png" alt="" />
+            <img src="/images/gallery/car2.png" alt="" />
+            <img src="/images/gallery/car3.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <section class="section form__section">
+        <div class="form__info">
+          <h2>Мечтаете о новом авто?</h2>
+          <p>
+            Просто заполните короткую заявку — и мы подберём модель, которая
+            подойдёт Вам, с удобным кредитным планом.
+          </p>
+        </div>
+        <form class="form__offer" onsubmit="return false;" method="post">
+          <div class="form__offer__inputs">
+            <input type="text" name="" id="" placeholder="ФИО" required  />
+            <input type="text" name="" id="" placeholder="Ваш телефон" required  />
+          </div>
+          <div class="form__offer__checkbox-wrapper">
+            <input
+              class="custom__checkbox"
+              type="checkbox"
+              name=""
+              id="privacy"
+              required
+            />
+            <label for="privacy">
+              Я согласен с политикой обработки персональных данных
+            </label>
+          </div>
+          <button type="submit" class="form__offer__button">
+            Получить предложение
+          </button>
+        </form>
+      </section>
+      <section class="section advantage__section">
+        <div class="advantage__card">
+          <div class="advantage__heading">
+            <div class="advantage__icon-wrapper">
+              <img src="/images/icons/advantages/poll.svg" alt="" />
+            </div>
+            <h4>Лучшие условия автокредитования</h4>
+          </div>
+
+          <p>
+            Ставка от 4,9% — это одно из самых выгодных решений на рынке. А
+            низкие платежи каждый месяц позволяют существенно снизить общие
+            расходы на ваш новый автомобиль.
+          </p>
+        </div>
+        <div class="advantage__card">
+          <div class="advantage__heading">
+            <div class="advantage__icon-wrapper">
+              <img src="/images/icons/advantages/client.svg" alt="" />
+            </div>
+            <h4>Ваш личный эксперт всегда на связи</h4>
+          </div>
+
+          <p>
+            Оставьте заявку на интересующую модель и узнайте предварительную
+            стоимость кредита онлайн. В течение 30 минут наш специалист свяжется
+            с вами и бесплатно проконсультирует по всем условиям.
+          </p>
+        </div>
+        <div class="advantage__card">
+          <div class="advantage__heading">
+            <div class="advantage__icon-wrapper">
+              <img src="/images/icons/advantages/people.svg" alt="" />
+            </div>
+            <h4>Доступное кредитование для каждого</h4>
+          </div>
+          <p>
+            В нашем автосалоне не нужен первый взнос. Мы предоставляем рассрочку
+            на эту сумму без переплат, что открывает путь к автомобилю для
+            большинства клиентов.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"></footer>
+  </body>
+</html>

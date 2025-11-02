@@ -1,0 +1,138 @@
+:root {
+  --colorBlue: #000f6e;
+  --colorRed: #c01919;
+  --colorGreen: #19c04b;
+  --colorGold: #c08019;
+  --colorBlack: #000000;
+}
+
+/* HERO */
+.hero__section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 140px;
+}
+.hero__info-wrapper,
+.hero__info {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.hero__info-wrapper {
+  max-width: 539px;
+  gap: 52px;
+}
+.hero__info {
+  gap: 20px;
+}
+.hero__title,
+.hero__price {
+  font-size: 2.5rem;
+  line-height: 2.75rem;
+  font-weight: 700;
+}
+.hero__type {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+.hero__info-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.purchase__options {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.purchase__item {
+  height: fit-content;
+  padding: 1.25rem;
+  background-color: var(--bg-white);
+  box-shadow: var(--default-shadow);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
+}
+.purchase__price {
+  font-size: 1.5rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  color: var(--text-LightBlue);
+}
+.purchase__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+  }
+}
+.purchase__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero__visual {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.hero__visual__colors {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: fit-content;
+}
+.hero__visual__color {
+  width: 76px;
+  height: 57px;
+  border-radius: 16px;
+
+  &.blue {
+    background-color: var(--colorBlue);
+  }
+  &.red {
+    background-color: var(--colorRed);
+  }
+  &.green {
+    background-color: var(--colorGreen);
+  }
+  &.gold {
+    background-color: var(--colorGold);
+  }
+  &.black {
+    background-color: var(--colorBlack);
+  }
+}
+.hero__visual__gallery {
+  display: flex;
+  gap: 40px;
+  margin-top: auto;
+
+  img {
+    width: 200px;
+    height: 114px;
+    border-radius: 16px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: var(--default-shadow);
+  }
+}
+/* END HERO */
