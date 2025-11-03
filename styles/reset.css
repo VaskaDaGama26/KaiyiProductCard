@@ -90,8 +90,12 @@ video {
   font-size: 100%;
   vertical-align: baseline;
 }
+
 a {
   text-decoration: none;
+}
+button {
+  border: none;
 }
 /* HTML5 display-role reset for older browsers */
 article,

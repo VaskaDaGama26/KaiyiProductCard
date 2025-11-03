@@ -1,0 +1,297 @@
+.tabs__section {
+  margin-top: 57px;
+}
+.tabs__section ul {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  gap: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.tabs__section ul > li {
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+  flex: 1;
+  transition: flex-basis 0.3s ease;
+}
+[role="presentation"]:has([role="tab"][aria-selected="true"]) {
+  flex: 0 0 460px;
+}
+[role="presentation"]:has([role="tab"][aria-selected="false"]) {
+  flex: 1 1 auto;
+}
+.tab__button {
+  display: block;
+  flex: 1 1 auto;
+  height: 92px;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: var(--text-darkerBlue);
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1.875rem 5.75rem;
+  border-radius: 24px 24px 0 0;
+
+  &[aria-selected="true"] {
+    background: var(--bg-lighterGray);
+  }
+  &[aria-controls="configurations"] {
+    text-align: left;
+  }
+  &[aria-controls="characteristics"] {
+    text-align: right;
+  }
+}
+.tab__panel {
+  background: var(--bg-lighterGray);
+  margin-top: -1px;
+  padding: 4.625rem 3rem;
+
+  &[id="configurations"] {
+    border-radius: 0 24px 24px 24px;
+  }
+  &[id="characteristics"] {
+    border-radius: 24px 0 24px 24px;
+  }
+}
+.tab__content {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  color: var(--text-darkerBlue);
+
+  h5 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    color: var(--text-lightBlue);
+    margin-bottom: 28px;
+  }
+}
+.tab__variants {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+.credit__tip {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+.car__prices {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+
+  .old__price {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    text-decoration: line-through;
+  }
+  .new__price {
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    color: var(--text-lighterBlue);
+  }
+}
+.tab__car-variant-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.tab__car-variant {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  label {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+}
+.tab__car-variant__type {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+
+  select {
+    width: 132px;
+    font-weight: 500;
+    border: none;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background: url("/images/icons/dropdown.svg") no-repeat right 12px center;
+    background-size: 20px;
+    padding-right: 38px;
+    width: 178px;
+  }
+}
+.tab__content__buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+
+  button {
+    border-radius: 12px;
+    font-size: 1.06rem;
+    line-height: 1.31rem;
+    font-weight: 600;
+    color: var(--text-white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 53px;
+    padding: 1rem 1.5rem;
+  }
+
+  .print__button {
+    background: var(--bg-white12);
+    box-shadow: var(--default-shadow);
+    padding: 0.625rem 1.25rem;
+  }
+  .credit__button {
+    background: var(--bg-blue);
+  }
+  .tradein__button {
+    background: var(--bg-cyan);
+  }
+}
+.tab__car-variant__left-side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+.compare__button {
+  font-size: 1.06rem;
+  line-height: 1.31rem;
+  font-weight: 600;
+  background: var(--bg-blue);
+  padding: 1rem 1.5rem;
+  color: var(--text-white);
+  width: fit-content;
+  border-radius: 12px;
+}
+
+@media (max-width: 599px) {
+  [role="presentation"]:has([role="tab"][aria-selected="true"]) {
+    flex: 0 0 160px;
+  } 
+  .tab__button {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    padding: 0.875rem 1.25rem;
+    height: 46px;
+    text-align: center !important;
+  }
+  .tab__variants {
+    gap: 28px;
+  }
+  .tab__content__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    row-gap: 6px;
+    margin-top: 24px;
+
+    button {
+      font-size: 0.685rem;
+      line-height: 0.875rem;
+      border-radius: 8px;
+      padding: 0.5rem 1.5rem;
+      height: fit-content;
+    }
+
+    .print__button {
+      order: 3;
+      flex: 1 1 100%;
+      padding: 0.25rem 0.75rem;
+
+      img {
+        width: 23px;
+        height: 22px;
+      }
+    }
+
+    .credit__button {
+      order: 1;
+      flex: 1 1 calc(50% - 6px);
+    }
+
+    .tradein__button {
+      order: 2;
+      flex: 1 1 calc(50% - 6px);
+    }
+  }
+
+  .credit__tip {
+    margin-top: 6px;
+  }
+  .car__prices {
+    max-width: 284px;
+    justify-content: space-between;
+
+    .new__price {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+  .tab__car-variant__type {
+    flex: 1;
+
+    select {
+      width: 100%;
+    }
+  }
+  .tab__panel {
+    padding: 1.875rem 1rem;
+    margin-inline: -16px;
+  }
+  .tab__car-variant__left-side {
+    flex-direction: column;
+    align-items: unset;
+    gap: 20px;
+  }
+  .tab__car-variant {
+    flex-direction: column;
+    align-items: unset;
+    justify-content: unset;
+    background: var(--bg-white);
+    border-radius: 20px;
+    padding: 1rem;
+  }
+  .tab__content {
+    gap: 28px;
+
+    h5 {
+      font-size: 1rem;
+      line-height: 1.25rem;
+      font-weight: 500;
+    }
+  }
+  .compare__button {
+    font-size: 0.685rem;
+    line-height: 0.875rem;
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    height: fit-content;
+  }
+}

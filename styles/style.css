@@ -1,20 +1,29 @@
 :root {
   --bg-cyan: #56e0ea;
   --bg-white: #ffffff;
+  --bg-white12: #ffffff1f;
+  --bg-lighterGray: #fafafa;
   --bg-lightGray: #f8f8f8;
+  --bg-blue: #000f6e;
 
   --text-white: #ffffff;
   --text-lightGray: #b8b8b8;
   --text-black: #1c1c1c;
-  --text-LightBlue: #0070dd;
+  --text-lighterBlue: #2fade4;
+  --text-lightBlue: #0070dd;
   --text-darkerBlue: #01101b;
   --text-blue: #000f6e;
+  --text-cyan: #33b3e5;
 
   --radio-default: #d3e0f0;
   --radio-active: #000f6e;
 
   --default-outline: #000f6e;
   --default-shadow: 2px 4px 40px 0 #adadad33;
+  --shadow-left: -4px 0 10px #0000001a;
+  --border-cyan: #33b3e5;
+
+  --bg-mobileMenu: #00000066;
 }
 
 * {
@@ -29,6 +38,25 @@ html {
   scroll-behavior: smooth;
   margin-top: 40px;
   font-size: 16px;
+
+  @media (max-width: 1023px) {
+    margin-top: 16px;
+  }
+}
+
+body {
+  margin: 0;
+
+  @media (max-width: 1439px) {
+    margin: 0 20px;
+  }
+  @media (max-width: 599px) {
+    margin: 0 16px;
+  }
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
 
 .header,
@@ -39,7 +67,8 @@ html {
   margin: 0 auto;
 }
 
-/* CUSTOM CHECKBOX (FOR BOTH CHECKBOXES AND RADIO-BUTTONS) */
+/* CUSTOM CHECKBOX */
+/* (FOR BOTH CHECKBOXES AND RADIO-BUTTONS) */
 .custom__checkbox {
   position: relative;
   width: 32px;
@@ -51,12 +80,16 @@ html {
   padding: 0;
   appearance: none;
   -webkit-appearance: none;
-  background-color: var(--radio-default);
+  background: var(--radio-default);
   transition: 0.3s all ease;
   cursor: pointer;
 }
+.custom__checkbox-lg {
+  width: 36px;
+  height: 36px;
+}
 .custom__checkbox:checked {
-  background-color: var(--radio-active);
+  background: var(--radio-active);
 }
 .custom__checkbox:focus {
   outline: none;
@@ -72,5 +105,40 @@ html {
   height: 16px;
   background: url("/images/icons/check.svg");
   position: absolute;
-  transform: translateX(50%) translateY(50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+@media (max-width: 599px) {
+  .custom__checkbox {
+    width: 24px;
+    height: 24px;
+  }
+  .custom__checkbox-lg {
+    width: 36px;
+    height: 36px;
+  }
+}
+/* END CUSTOM CHECKBOX */
+
+/* CUSTOM GRADIENT BUTTON */
+.custom__gradient__button {
+  width: 100%;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: var(--text-white);
+  background: var(--button-gradient);
+  padding: 1.25rem;
+  border-radius: 12px;
+  cursor: pointer;
+}
+@media (max-width: 599px) {
+  .custom__gradient__button {
+    font-size: 0.935rem;
+    line-height: 1.185rem;
+    border-radius: 16px;
+    padding: 0.75rem 1.5rem;
+  }
+}
+/* END CUSTOM GRADIENT BUTTON */

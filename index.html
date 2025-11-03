@@ -21,8 +21,8 @@
   </head>
   <body>
     <header class="header">
-      <img src="/images/logo.svg" alt="Logo" />
-      <nav class="nav">
+      <a href="/"><img src="/images/logo.svg" alt="Logo" /></a>
+      <nav class="nav" aria-label="Основная навигация">
         <a class="nav__link" href="#">Главная</a>
         <a class="nav__link" href="#">Автокредит</a>
         <a class="nav__link" href="#">Trade-in</a>
@@ -34,13 +34,31 @@
         <a class="nav__link" href="#">Контакты</a>
       </nav>
       <a href="#" class="feedback__button">Обратная связь</a>
+      <div class="mobile__buttons">
+        <a href="#">
+          <img src="/images/icons/phone.svg" alt="" />
+        </a>
+        <button class="burger__button-wrapper" aria-label="Открыть меню">
+          <img
+            class="burger__button"
+            src="/images/icons/burger.svg"
+            alt=""
+            aria-hidden="true"
+          />
+        </button>
+      </div>
+      <div class="mobile__nav" id="mobileNav" aria-label="Мобильное меню">
+        <nav class="nav--mobile">
+          <!-- клонируется через JS -->
+        </nav>
+      </div>
     </header>
     <main class="main">
-      <section class="section hero__section">
-        <div class="hero__info-wrapper">
-          <div class="hero__info-main">
+      <section class="section hero__section" aria-labelledby="hero-title">
+        <div class="hero__info-purchase-wrapper">
+          <div class="hero__info-wrapper">
             <div class="hero__info">
-              <h1 class="hero__title">Kaiyi X3 Pro</h1>
+              <h1 id="hero-title" class="hero__title">Kaiyi X3 Pro</h1>
               <p class="hero__type">Внедорожник</p>
             </div>
             <span class="hero__price">от 1 149 000 руб</span>
@@ -50,10 +68,11 @@
               <label class="purchase__item">
                 <div class="purchase__header">
                   <input
-                    class="custom__checkbox"
+                    class="custom__checkbox hero__checkbox"
                     type="radio"
                     name="purchase__radio"
                     id="tradein"
+                    required
                   />
                   <span class="purchase__price">80 000 ₽</span>
                 </div>
@@ -68,7 +87,7 @@
               <label class="purchase__item">
                 <div class="purchase__header">
                   <input
-                    class="custom__checkbox"
+                    class="custom__checkbox hero__checkbox"
                     type="radio"
                     name="purchase__radio"
                     id="default"
@@ -87,7 +106,7 @@
               <label class="purchase__item">
                 <div class="purchase__header">
                   <input
-                    class="custom__checkbox"
+                    class="custom__checkbox hero__checkbox"
                     type="radio"
                     name="purchase__radio"
                     id="discount"
@@ -102,19 +121,36 @@
             </div>
           </div>
         </div>
+        <div class="hero__mobile-buttons">
+          <button class="custom__gradient__button">Рассчитать в кредит</button>
+          <button class="hero__mobile-tradein">Обменять в TRADE-IN</button>
+        </div>
         <div class="hero__visual">
-          <img src="/images/gallery/car.png" alt="" />
+          <img src="/images/gallery/car.png" alt="Kaiyi X3 Pro" />
           <div class="hero__visual__colors">
-            <a href="#blue"><div class="hero__visual__color blue"></div></a>
-            <a href="#red"><div class="hero__visual__color red"></div></a>
-            <a href="#green"><div class="hero__visual__color green"></div></a>
-            <a href="#gold"><div class="hero__visual__color gold"></div></a>
-            <a href="#black"><div class="hero__visual__color black"></div></a>
+            <a href="#blue" aria-label="Синий цвет">
+              <div class="hero__visual__color blue"></div>
+            </a>
+            <a href="#red" aria-label="Красный цвет">
+              <div class="hero__visual__color red"></div>
+            </a>
+            <a href="#green" aria-label="Зелёный цвет">
+              <div class="hero__visual__color green"></div>
+            </a>
+            <a href="#gold" aria-label="Золотой цвет">
+              <div class="hero__visual__color gold"></div>
+            </a>
+            <a href="#black" aria-label="Чёрный цвет">
+              <div class="hero__visual__color black"></div>
+            </a>
           </div>
           <div class="hero__visual__gallery">
-            <img src="/images/gallery/car1.png" alt="" />
-            <img src="/images/gallery/car2.png" alt="" />
-            <img src="/images/gallery/car3.png" alt="" />
+            <img
+              src="/images/gallery/car1.png"
+              alt="Kaiyi X3 Pro Вид спереди"
+            />
+            <img src="/images/gallery/car2.png" alt="Kaiyi X3 Pro Вид внутри" />
+            <img src="/images/gallery/car3.png" alt="Kaiyi X3 Pro Вид сзади" />
           </div>
         </div>
       </section>
@@ -128,8 +164,20 @@
         </div>
         <form class="form__offer" onsubmit="return false;" method="post">
           <div class="form__offer__inputs">
-            <input type="text" name="" id="" placeholder="ФИО" required  />
-            <input type="text" name="" id="" placeholder="Ваш телефон" required  />
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder="ФИО"
+              required
+            />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Ваш телефон"
+              required
+            />
           </div>
           <div class="form__offer__checkbox-wrapper">
             <input
@@ -143,13 +191,13 @@
               Я согласен с политикой обработки персональных данных
             </label>
           </div>
-          <button type="submit" class="form__offer__button">
+          <button type="submit" class="custom__gradient__button">
             Получить предложение
           </button>
         </form>
       </section>
       <section class="section advantage__section">
-        <div class="advantage__card">
+        <article class="advantage__card">
           <div class="advantage__heading">
             <div class="advantage__icon-wrapper">
               <img src="/images/icons/advantages/poll.svg" alt="" />
@@ -162,8 +210,8 @@
             низкие платежи каждый месяц позволяют существенно снизить общие
             расходы на ваш новый автомобиль.
           </p>
-        </div>
-        <div class="advantage__card">
+        </article>
+        <article class="advantage__card">
           <div class="advantage__heading">
             <div class="advantage__icon-wrapper">
               <img src="/images/icons/advantages/client.svg" alt="" />
@@ -176,8 +224,8 @@
             стоимость кредита онлайн. В течение 30 минут наш специалист свяжется
             с вами и бесплатно проконсультирует по всем условиям.
           </p>
-        </div>
-        <div class="advantage__card">
+        </article>
+        <article class="advantage__card">
           <div class="advantage__heading">
             <div class="advantage__icon-wrapper">
               <img src="/images/icons/advantages/people.svg" alt="" />
@@ -189,9 +237,240 @@
             на эту сумму без переплат, что открывает путь к автомобилю для
             большинства клиентов.
           </p>
+        </article>
+      </section>
+      <section class="section tabs__section">
+        <ul class="tabs" role="tablist">
+          <li role="presentation">
+            <button
+              class="tab__button"
+              id="tab-1"
+              role="tab"
+              aria-controls="configurations"
+              aria-selected="true"
+            >
+              Комплектации
+            </button>
+          </li>
+          <li role="presentation">
+            <button
+              class="tab__button"
+              id="tab-2"
+              role="tab"
+              aria-controls="characteristics"
+              aria-selected="false"
+            >
+              Характеристики
+            </button>
+          </li>
+        </ul>
+        <div
+          class="tab__panel"
+          id="configurations"
+          role="tabpanel"
+          aria-labelledby="tab-1"
+        >
+          <form action="" class="tab__content">
+            <div class="tab__variants">
+              <div>
+                <h5>1.4 л. 6МКПП (100 л.с.) FWD</h5>
+                <div class="tab__car-variant-wrapper">
+                  <div class="tab__car-variant">
+                    <div class="tab__car-variant__left-side">
+                      <label>
+                        <input
+                          class="custom__checkbox custom__checkbox-lg"
+                          type="checkbox"
+                          name="car-variant__checkbox"
+                          id=""
+                          required
+                        />
+                        <div class="tab__car-variant__type">
+                          <select name="car-type-select" id="">
+                            <option value="active" selected>Active</option>
+                            <option value="comfort-new">Comfort New</option>
+                          </select>
+                        </div>
+                      </label>
+                      <div class="car__prices">
+                        <span class="old__price">1 408 000 ₽</span>
+                        <span class="new__price">от 552 000 ₽</span>
+                      </div>
+                    </div>
+                    <p class="credit__tip">В кредит от 6 807 ₽/мес.</p>
+                    <div class="tab__content__buttons">
+                      <button class="print__button">
+                        <img src="/images/icons/print.svg" alt="" />
+                      </button>
+                      <button class="credit__button">В кредит</button>
+                      <button class="tradein__button">Trade-in</button>
+                    </div>
+                  </div>
+                  <div class="tab__car-variant">
+                    <div class="tab__car-variant__left-side">
+                      <label>
+                        <input
+                          class="custom__checkbox custom__checkbox-lg"
+                          type="checkbox"
+                          name="car-variant__checkbox"
+                          id=""
+                        />
+                        <div class="tab__car-variant__type">
+                          <select name="car-type-select" id="">
+                            <option value="active">Active</option>
+                            <option value="comfort-new" selected>
+                              Comfort New
+                            </option>
+                          </select>
+                        </div>
+                      </label>
+                      <div class="car__prices">
+                        <span class="old__price">1 408 000 ₽</span>
+                        <span class="new__price">от 552 000 ₽</span>
+                      </div>
+                    </div>
+
+                    <p class="credit__tip">В кредит от 6 807 ₽/мес.</p>
+                    <div class="tab__content__buttons">
+                      <button class="print__button">
+                        <img src="/images/icons/print.svg" alt="" />
+                      </button>
+                      <button class="credit__button">В кредит</button>
+                      <button class="tradein__button">Trade-in</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h5>1.4 л. 6МКПП (100 л.с.) FWD</h5>
+                <div class="tab__car-variant-wrapper">
+                  <div class="tab__car-variant">
+                    <div class="tab__car-variant__left-side">
+                      <label>
+                        <input
+                          class="custom__checkbox custom__checkbox-lg"
+                          type="checkbox"
+                          name="car-variant__checkbox"
+                          id=""
+                        />
+                        <div class="tab__car-variant__type">
+                          <select name="car-type-select" id="">
+                            <option value="active" selected>Active</option>
+                            <option value="comfort-new">Comfort New</option>
+                          </select>
+                        </div>
+                      </label>
+                      <div class="car__prices">
+                        <span class="old__price">1 408 000 ₽</span>
+                        <span class="new__price">от 552 000 ₽</span>
+                      </div>
+                    </div>
+                    <p class="credit__tip">В кредит от 6 807 ₽/мес.</p>
+                    <div class="tab__content__buttons">
+                      <button class="print__button">
+                        <img src="/images/icons/print.svg" alt="" />
+                      </button>
+                      <button class="credit__button">В кредит</button>
+                      <button class="tradein__button">Trade-in</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="compare__button">Сравнить комплектации</button>
+          </form>
+        </div>
+
+        <div
+          class="tab__panel"
+          id="characteristics"
+          role="tabpanel"
+          aria-labelledby="tab-2"
+          hidden
+        >
+          <!-- Заглушка вкладки характеристик -->
+          <div style="display: flex; flex-direction: column; gap: 32px">
+            <p>Максимальный комфорт в салоне и современная мультимедиа.</p>
+            <p>Максимальный комфорт в салоне и современная мультимедиа.</p>
+            <p>Максимальный комфорт в салоне и современная мультимедиа.</p>
+            <p>Максимальный комфорт в салоне и современная мультимедиа.</p>
+          </div>
+        </div>
+      </section>
+      <section class="section popular__section">
+        <h2>Рекомендации для вас</h2>
+        <div class="popular__carousel">
+          <article class="popular__card">
+            <img class="bg__pattern" src="/images/popular/city-bg.png" alt="" />
+            <img
+              class="car__img"
+              src="/images/popular/car1.png"
+              alt="Kaiyi X7 Kunlun"
+            />
+            <div class="popular__card__content">
+              <div class="card__content__info-wrapper">
+                <div class="card__content__info-main">
+                  <div class="card__content__info">
+                    <h5>Kaiyi X7 Kunlun</h5>
+                    <span>от 696 000 ₽</span>
+                  </div>
+                  <p>В кредит от 6 807 ₽/мес.</p>
+                </div>
+                <button class="custom__gradient__button popular__button">
+                  Купить в кредит
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="popular__card">
+            <img class="bg__pattern" src="/images/popular/city-bg.png" alt="" />
+            <img
+              class="car__img"
+              src="/images/popular/car2.png"
+              alt="Kaiyi X7 Kunlun"
+            />
+            <div class="popular__card__content">
+              <div class="card__content__info-wrapper">
+                <div class="card__content__info-main">
+                  <div class="card__content__info">
+                    <h5>Kaiyi X7 Kunlun</h5>
+                    <span>от 696 000 ₽</span>
+                  </div>
+                  <p>В кредит от 6 807 ₽/мес.</p>
+                </div>
+                <button class="custom__gradient__button popular__button">
+                  Купить в кредит
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="popular__card">
+            <img class="bg__pattern" src="/images/popular/city-bg.png" alt="" />
+            <img
+              class="car__img"
+              src="/images/popular/car3.png"
+              alt="Kaiyi X7 Kunlun"
+            />
+            <div class="popular__card__content">
+              <div class="card__content__info-wrapper">
+                <div class="card__content__info-main">
+                  <div class="card__content__info">
+                    <h5>Kaiyi X7 Kunlun</h5>
+                    <span>от 696 000 ₽</span>
+                  </div>
+                  <p>В кредит от 6 807 ₽/мес.</p>
+                </div>
+                <button class="custom__gradient__button popular__button">
+                  Купить в кредит
+                </button>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
     </main>
     <footer class="footer"></footer>
+    <script src="/scripts/mobileMenu.js"></script>
+    <script src="/scripts/ChangeTab.js"></script>
   </body>
 </html>
