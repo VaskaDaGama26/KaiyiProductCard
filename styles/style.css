@@ -104,7 +104,7 @@ body.no-scroll {
   content: "";
   width: 17px;
   height: 16px;
-  background: url("/images/icons/check.svg");
+  background: url("../images/icons/check.svg");
   position: absolute;
   top: 50%;
   left: 50%;

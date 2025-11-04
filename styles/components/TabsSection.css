@@ -137,7 +137,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
 
-    background: url("/images/icons/dropdown.svg") no-repeat right 12px center;
+    background: url("../images/icons/dropdown.svg") no-repeat right 12px center;
     background-size: 20px;
     padding-right: 38px;
     width: 178px;
