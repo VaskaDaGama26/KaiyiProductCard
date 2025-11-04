@@ -162,34 +162,75 @@
             подойдёт Вам, с удобным кредитным планом.
           </p>
         </div>
-        <form class="form__offer" onsubmit="return false;" method="post">
+        <form
+          id="offerForm"
+          class="form__offer"
+          action=""
+          novalidate
+          data-js-form
+        >
           <div class="form__offer__inputs">
-            <input
-              type="text"
-              id="fullname"
-              name="fullname"
-              placeholder="ФИО"
-              required
-            />
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="Ваш телефон"
-              required
-            />
+            <div class="input__wrapper">
+              <label class="input__required" for="fullname">*</label>
+              <input
+                class="input__control"
+                type="text"
+                id="fullname"
+                name="fullname"
+                placeholder="ФИО"
+                minlength="5"
+                maxlength="100"
+                aria-errormessage="fullname-errors"
+                required
+              />
+              <span
+                class="input__errors"
+                id="fullname-errors"
+                data-js-form-input-errors
+              ></span>
+            </div>
+            <div class="input__wrapper">
+              <label class="input__required" for="phone">*</label>
+              <input
+                class="input__control"
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Ваш телефон"
+                pattern="(\+7|8)[\s\-]?\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}"
+                title="Введите номер телефона в формате +7 999 123 45 67 или 8 (999) 123-45-67"
+                aria-errormessage="phone-errors"
+                required
+              />
+              <span
+                class="input__errors"
+                id="phone-errors"
+                data-js-form-input-errors
+              ></span>
+            </div>
           </div>
-          <div class="form__offer__checkbox-wrapper">
-            <input
-              class="custom__checkbox"
-              type="checkbox"
-              name=""
-              id="privacy"
-              required
-            />
-            <label for="privacy">
-              Я согласен с политикой обработки персональных данных
-            </label>
+          <div class="input__wrapper checkbox__wrapper">
+            <div class="form__offer__checkbox-wrapper">
+              <input
+                class="custom__checkbox input__control"
+                type="checkbox"
+                name="privacy"
+                id="privacy"
+                aria-errormessage="privacy-errors"
+                required
+              />
+              <div class="input__required-with-label-wrapper">
+                <label class="input__required-with-label" for="privacy">
+                  Я согласен с политикой обработки персональных данных
+                </label>
+              </div>
+            </div>
+            <span
+              class="input__errors"
+              id="privacy-errors"
+              data-js-form-input-errors
+            >
+            </span>
           </div>
           <button type="submit" class="custom__gradient__button">
             Получить предложение
@@ -471,6 +512,7 @@
     </main>
     <footer class="footer"></footer>
     <script src="/scripts/mobileMenu.js"></script>
-    <script src="/scripts/ChangeTab.js"></script>
+    <script src="/scripts/changeTab.js"></script>
+    <script src="/scripts/formValidation.js"></script>
   </body>
 </html>

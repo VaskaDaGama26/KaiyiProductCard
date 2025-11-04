@@ -191,16 +191,15 @@
   border-radius: 12px;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 1023px) {
   [role="presentation"]:has([role="tab"][aria-selected="true"]) {
     flex: 0 0 160px;
-  } 
+  }
   .tab__button {
     font-size: 0.875rem;
     line-height: 1.125rem;
     padding: 0.875rem 1.25rem;
     height: 46px;
-    text-align: center !important;
   }
   .tab__variants {
     gap: 28px;

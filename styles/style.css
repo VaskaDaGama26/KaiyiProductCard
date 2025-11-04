@@ -22,6 +22,7 @@
   --default-shadow: 2px 4px 40px 0 #adadad33;
   --shadow-left: -4px 0 10px #0000001a;
   --border-cyan: #33b3e5;
+  --input-red: #c22020;
 
   --bg-mobileMenu: #00000066;
 }
@@ -109,7 +110,7 @@ body.no-scroll {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-@media (max-width: 599px) {
+@media (max-width: 1023px) {
   .custom__checkbox {
     width: 24px;
     height: 24px;
@@ -133,7 +134,7 @@ body.no-scroll {
   border-radius: 12px;
   cursor: pointer;
 }
-@media (max-width: 599px) {
+@media (max-width: 1023px) {
   .custom__gradient__button {
     font-size: 0.935rem;
     line-height: 1.185rem;
